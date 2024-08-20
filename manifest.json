@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "Open Link in Private Window",
+    "version": "1.1",
+    "description": "Opens links in a new private window when Ctrl+Shift+Left Click is pressed.",
+    "permissions": ["tabs"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": ["<all_urls>"],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "options_ui": {
+      "page": "options.html",
+      "open_in_tab": true
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+      }
+    },
+    "icons": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  }
+  
